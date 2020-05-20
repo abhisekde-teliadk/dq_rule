@@ -1,6 +1,16 @@
 from impala import run_sql
 import pandas as pd
 
+def check_rule(rule_id, rules):
+    rules = checks[checks["check_id"] == rules[rules["rule_id"] == rule_id]["check_id"]][["statement_1", "relation", "statement_2"]]
+    check_list = rules.join(other=checks, on="check_id", how="inner", lsuffix="_r")
+    q1 = pd.merge(check_list, statements, left_on='statement_1', right_on='statement_id', how="inner")
+    q2 = pd.merge(q1, statements, left_on='statement_2', right_on='statement_id', how="inner")
+    q2["out_1"] = run_sql(q2["statement_x"])[0][0]
+    q2["out_2"] = run_sql(q2["statement_y"])[0][0]
+    q2["result"] = q2["out_1"] == q2["out_2"]
+    print(q2)
+
 statement_array = [
     (1, "seelct subscriber_id from analytics.abt_subscriber_current group by subscriber_id having count(*) > 1"), 
     (2, "seelct count(*) from analytics.abt_subscriber_current where is_active is not true"), 
@@ -53,15 +63,5 @@ rules_array = [
 
 rules = pd.DataFrame(data=rules_array, columns=["rule_id", "check_id"])
 
-def check_rule(rule_id):
-    rules = checks[checks["check_id"] == rules[rules["rule_id"] == rule_id]["check_id"]][["statement_1", "relation", "statement_2"]]
-    check_list = rules.join(other=checks, on="check_id", how="inner", lsuffix="_r")
-    q1 = pd.merge(check_list, statements, left_on='statement_1', right_on='statement_id', how="inner")
-    q2 = pd.merge(q1, statements, left_on='statement_2', right_on='statement_id', how="inner")
-    q2["out_1"] = run_sql(q2["statement_x"])[0][0]
-    q2["out_2"] = run_sql(q2["statement_y"])[0][0]
-    q2["result"] = q2["out_1"] == q2["out_2"]
-    print(q2)
-
 # MAIN
-check_rule(1)
+check_rule(1, rules)
