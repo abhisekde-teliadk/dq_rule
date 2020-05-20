@@ -6,10 +6,6 @@ import re
 import sys
 
 def get_impala_url():
-    cmd = Popen(["kinit","-k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
-    (o , e) = cmd.communicate()
-    assert len(e) == 0, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
-
     env = os.environ
     assert env.get('TF_KDCIP','') != '', 'Cannot find KDC IP in environment variables!'
     kdcip = env['TF_KDCIP']
@@ -26,6 +22,10 @@ def get_impala_url():
 
 def run_sql(impd, command):
     print(command)
+    cmd = Popen(["kinit","-k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
+    (o , e) = cmd.communicate()
+    
+    assert len(e) == 0, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
     m = re.compile('^Fetched (\d+) row.*')
     cmd = Popen(["impala-shell", "-i", impd, "--ssl", "-B", "-q", command], stdout= PIPE, stderr=PIPE )
     (o , e) = cmd.communicate()
