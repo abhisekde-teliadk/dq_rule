@@ -21,10 +21,10 @@ def get_impala_url():
     return impd
 
 def run_sql(impd, command):
-    print(command)
+    print("SQL: " + command)
     cmd = Popen(["kinit","-k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
     (o , e) = cmd.communicate()
-    
+
     assert len(e) == 0, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
     m = re.compile('^Fetched (\d+) row.*')
     cmd = Popen(["impala-shell", "-i", impd, "--ssl", "-B", "-q", command], stdout= PIPE, stderr=PIPE )
