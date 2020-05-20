@@ -46,8 +46,7 @@ def run_sql(impd, command):
 # MAIN
 impala_url = get_impala_url()
 if len(impala_url) > 0:
-    sql_output = run_sql(sys.argv[0])
+    sql_output = run_sql(impala_url, sys.argv[0])
     print(sql_output)
 else:
     print('SQL execution failed!')
-    
