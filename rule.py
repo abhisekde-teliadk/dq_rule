@@ -39,6 +39,8 @@ kdcip = e['TF_KDCIP']
 registerurl = "http://"+kdcip+":5000/"
 impd = get_from_register('service/impalad?ip=1' )    
 global_cfg = get_from_register('config/global',True)
-
+cmd = Popen(["kinit","k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
+(o , e) = cmd.communicate()
+assert e, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
 sql_output = run_command(sys.argv[0])
 print(sql_output)
