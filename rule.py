@@ -1,8 +1,8 @@
 from impala import run_sql
 import pandas as pd
 
-def check_rule(rule_id, rules):
-    rules = checks[checks["check_id"] == rules[rules["rule_id"] == rule_id]["check_id"]][["statement_1", "relation", "statement_2"]]
+def check_rule(rule_id):
+    # rules = checks[checks["check_id"] == rules[rules["rule_id"] == rule_id]["check_id"]][["statement_1", "relation", "statement_2"]]
     check_list = rules.join(other=checks, on="check_id", how="inner", lsuffix="_r")
     q1 = pd.merge(check_list, statements, left_on='statement_1', right_on='statement_id', how="inner")
     q2 = pd.merge(q1, statements, left_on='statement_2', right_on='statement_id', how="inner")
@@ -64,4 +64,4 @@ rules_array = [
 rules = pd.DataFrame(data=rules_array, columns=["rule_id", "check_id"])
 
 # MAIN
-check_rule(1, rules)
+check_rule(1)
