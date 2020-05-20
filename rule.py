@@ -5,20 +5,20 @@ import os
 import re
 import sys
 
-def get_impala_url():
-    e = os.environ
-    assert e.get('TF_KDCIP','') != '', 'Cannot find KDC IP in environment variables!'
-    kdcip = e['TF_KDCIP']
-    url = "http://"+kdcip+":5000/service/impalad?ip=1"
-    r = requests.get(url)
+def get_impala_ip():
+    
+
+def get_from_register( url, asDict = False ):
+    r = requests.get(registerurl+url)
     assert r.ok, 'Cannot retrieve ['+url+'] from the registry!'
-    impd = r.text  
-    return impd
+    if asDict:
+        return json.loads(r.text)
+    else:
+        return r.text
         
-def run_sql(impd, statement):
-    print(statement)
+def run_command(command):
     m = re.compile('^Fetched (\d+) row.*')
-    cmd = Popen(["impala-shell","-i", impd ,"--ssl", "-B", "-q", statement], stdout= PIPE, stderr=PIPE )
+    cmd = Popen(["impala-shell","-i",impd,"--ssl","-B","-q",command], stdout= PIPE, stderr=PIPE )
     (o , e) = cmd.communicate()
     if cmd.returncode == 0:
         fetched = None
@@ -34,7 +34,14 @@ def run_sql(impd, statement):
     else:
         raise Exception(e)
 
+
 # MAIN
-impd = get_impala_url()
-sql_output = run_sql(impd, sys.argv[0])
+e = os.environ
+assert e.get('TF_KDCIP','') != '', 'Cannot find KDC IP in environment variables!'
+kdcip = e['TF_KDCIP']
+registerurl = "http://"+kdcip+":5000/"
+impd = get_from_register('service/impalad?ip=1' )    
+global_cfg = get_from_register('config/global',True)
+
+sql_output = run_command(sys.argv[0])
 print(sql_output)
