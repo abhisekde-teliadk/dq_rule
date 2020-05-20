@@ -1,0 +1,616 @@
+[2020/05/20-11:45:12.357] [ActivityExecutor-36] [INFO] [dku] running compute_assigment_bov_dlg_NP - ----------------------------------------
+[2020/05/20-11:45:12.357] [ActivityExecutor-36] [INFO] [dku] running compute_assigment_bov_dlg_NP - DSS startup: jek version:5.1.6
+[2020/05/20-11:45:12.357] [ActivityExecutor-36] [INFO] [dku] running compute_assigment_bov_dlg_NP - DSS home: /data/data0/dss/data
+[2020/05/20-11:45:12.357] [ActivityExecutor-36] [INFO] [dku] running compute_assigment_bov_dlg_NP - OS: Linux 3.10.0-1062.4.1.el7.x86_64 amd64 - Java: Oracle Corporation 1.8.0_232
+[2020/05/20-11:45:12.357] [ActivityExecutor-36] [INFO] [dku.flow.jobrunner] running compute_assigment_bov_dlg_NP - Allocated a slot for this activity!
+[2020/05/20-11:45:12.358] [ActivityExecutor-36] [INFO] [dku.flow.jobrunner] running compute_assigment_bov_dlg_NP - Run activity
+[2020/05/20-11:45:12.371] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Executing default pre-activity lifecycle hook
+[2020/05/20-11:45:12.464] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.work_assigment_aov_bov connection=work cpr=/data/work resolvedPath=/SERGEL_JOBS/work_assigment_aov_bov connRootSA=nullconnRootWithinSA=/data/work configuredRootPathWithinSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov effectiveRootPathWithinSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:12.469] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Build HDFSProvider conn=work cpr=/data/work pWCR=/SERGEL_JOBS/work_assigment_aov_bov/data crSA=null crWSA=/data/work rpWSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:12.471] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:12.500] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:12.518] [ActivityExecutor-36] [DEBUG] [org.apache.htrace.core.Tracer] running compute_assigment_bov_dlg_NP - sampler.classes = ; loaded no samplers
+[2020/05/20-11:45:12.520] [ActivityExecutor-36] [DEBUG] [org.apache.htrace.core.Tracer] running compute_assigment_bov_dlg_NP - span.receiver.classes = ; loaded no span receivers
+[2020/05/20-11:45:13.345] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-1467567433_36, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:13.471] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting gateway ACL (no-create): SERGEL_JOBS.work_assigment_aov_bov
+[2020/05/20-11:45:13.471] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.492] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.509] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group:data_admin:rwx,group:data_developer:rwx,group:administrators:rwx,user:ojp7060:rwx,group:administrators:rwx,group:data_admin:rwx,user:dssuser:rwx,user:impala:rwx,user:hive:rwx,user::rwx,other::---,group::---
+[2020/05/20-11:45:13.509] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting Gateway ACLs  on:/data/work/SERGEL_JOBS/work_assigment_aov_bov -> user:impala:rwx,other::---,group::---,group:administrators:rwx,user:dssuser:rwx,user:hive:rwx,user::rwx,group:data_admin:rwx,group:data_developer:rwx,user:ojp7060:rwx
+[2020/05/20-11:45:13.519] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - connectionRoot=/data/work configured=/data/work/SERGEL_JOBS/work_assigment_aov_bov chunks=SERGEL_JOBS--work_assigment_aov_bov
+[2020/05/20-11:45:13.519] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Path = /data/work chunk=SERGEL_JOBS
+[2020/05/20-11:45:13.522] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: user:impala:r-x,user:hive:r-x,group:sensitive_porting:--x,group:interfaces:--x,group:data_team:--x,group:bi_report:--x,group:anonymized:--x,group:sandbox:--x,group:data_developer_telia:--x,group:hr:--x,group:data_science:--x,group:sensitive:--x,group:sergel:--x,group:analytics:--x,group:marketing:--x,group:b2c:--x,group:b2b:--x,group:wholesale:--x,group:readers:--x,group:data_developer:--x,group:work_ds:--x,group:micro:--x,group:purpose_specific:--x,group:administrators:--x,group:data_admin:--x,user:dssuser:rwx,user::rwx
+[2020/05/20-11:45:13.523] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting connection-level ACLs on:/data/work/SERGEL_JOBS -> group:b2b:--x,user:impala:r-x,group:administrators:--x,group:marketing:--x,user::rwx,group:b2c:--x,group:anonymized:--x,group:hr:--x,group:sensitive:--x,group:data_science:--x,group:sensitive_porting:--x,group:sergel:--x,group:micro:--x,group:data_developer_telia:--x,group:work_ds:--x,group:bi_report:--x,group:sandbox:--x,user:hive:r-x,group:analytics:--x,group:interfaces:--x,group:data_team:--x,group:readers:--x,group:purpose_specific:--x,user:dssuser:rwx,group:wholesale:--x,group:data_developer:--x,group:data_admin:--x,group::---,other::---,mask::r-x
+[2020/05/20-11:45:13.525] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting dataset-wide data-usability ACL: SERGEL_JOBS.work_assigment_aov_bov
+[2020/05/20-11:45:13.526] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-on-children) path=/data/work/SERGEL_JOBS/work_assigment_aov_bov
+[2020/05/20-11:45:13.532] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.533] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.533] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with explicit UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS))
+[2020/05/20-11:45:13.533] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.551] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.564] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-on-children) path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.566] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r--,other::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.567] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/2144ac2e8f672634-b102f50f00000005_1323004865_data.0.parq set ACLs: other::r--,group::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.567] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with explicit UGI: impala (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS))
+[2020/05/20-11:45:13.567] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: impala (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.587] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.597] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r--,other::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.598] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/2144ac2e8f672634-b102f50f00000006_781086343_data.0.parq set ACLs: other::r--,group::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.603] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r--,other::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.603] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/2144ac2e8f672634-b102f50f00000007_1803433111_data.0.parq set ACLs: other::r--,group::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.606] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r--,other::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.606] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/2144ac2e8f672634-b102f50f00000008_1803433111_data.0.parq set ACLs: other::r--,group::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.608] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r--,other::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.609] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/2144ac2e8f672634-b102f50f00000009_781086343_data.0.parq set ACLs: other::r--,group::r--,user:dssuser:rw-
+[2020/05/20-11:45:13.611] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.611] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/_impala_insert_staging set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.613] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-on-children) path=hdfs://devhanameservice/data/work/SERGEL_JOBS/work_assigment_aov_bov/data/_impala_insert_staging
+[2020/05/20-11:45:13.616] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.617] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Build HDFSProvider conn=sergel cpr=/data/sergel pWCR=/SERGEL_JOBS/sergel_assigment_bov_dlg/data crSA=null crWSA=/data/sergel rpWSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.617] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.636] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.638] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-609867541_36, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:13.645] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting gateway ACL (create): SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:13.645] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.671] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.676] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group:data_admin:rwx,group:data_developer:rwx,group:administrators:rwx,user:ojp7060:rwx,group:administrators:rwx,group:data_admin:rwx,user:dssuser:rwx,user:impala:rwx,user:hive:rwx,user::rwx,other::---,group::---
+[2020/05/20-11:45:13.676] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting Gateway ACLs  on:/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg -> user:impala:rwx,other::---,group::---,group:administrators:rwx,user:dssuser:rwx,user:hive:rwx,user::rwx,group:data_admin:rwx,group:data_developer:rwx,user:ojp7060:rwx
+[2020/05/20-11:45:13.679] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - connectionRoot=/data/sergel configured=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg chunks=SERGEL_JOBS--sergel_assigment_bov_dlg
+[2020/05/20-11:45:13.679] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Path = /data/sergel chunk=SERGEL_JOBS
+[2020/05/20-11:45:13.680] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: user:impala:r-x,user:hive:r-x,group:sensitive_porting:--x,group:interfaces:--x,group:data_team:--x,group:bi_report:--x,group:anonymized:--x,group:sandbox:--x,group:data_developer_telia:--x,group:hr:--x,group:data_science:--x,group:sensitive:--x,group:sergel:--x,group:analytics:--x,group:marketing:--x,group:b2c:--x,group:b2b:--x,group:wholesale:--x,group:readers:--x,group:data_developer:--x,group:work_ds:--x,group:micro:--x,group:purpose_specific:--x,group:administrators:--x,group:data_admin:--x,user:dssuser:rwx,user::rwx
+[2020/05/20-11:45:13.681] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting connection-level ACLs on:/data/sergel/SERGEL_JOBS -> group:b2b:--x,user:impala:r-x,group:administrators:--x,group:marketing:--x,user::rwx,group:b2c:--x,group:anonymized:--x,group:hr:--x,group:sensitive:--x,group:data_science:--x,group:sensitive_porting:--x,group:sergel:--x,group:micro:--x,group:data_developer_telia:--x,group:work_ds:--x,group:bi_report:--x,group:sandbox:--x,user:hive:r-x,group:analytics:--x,group:interfaces:--x,group:data_team:--x,group:readers:--x,group:purpose_specific:--x,user:dssuser:rwx,group:wholesale:--x,group:data_developer:--x,group:data_admin:--x,group::---,other::---,mask::r-x
+[2020/05/20-11:45:13.683] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Checking if sources are ready
+[2020/05/20-11:45:13.684] [ActivityExecutor-36] [DEBUG] [dku.db.internal] running compute_assigment_bov_dlg_NP - Borrowing a connection. Read-only: false
+[2020/05/20-11:45:13.687] [ActivityExecutor-36] [DEBUG] [dku.dataset.hash] running compute_assigment_bov_dlg_NP - Readiness cache miss for dataset__abu1265__SERGEL_JOBS.work_assigment_aov_bov__NP
+[2020/05/20-11:45:13.690] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.work_assigment_aov_bov connection=work cpr=/data/work resolvedPath=/SERGEL_JOBS/work_assigment_aov_bov connRootSA=nullconnRootWithinSA=/data/work configuredRootPathWithinSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov effectiveRootPathWithinSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.690] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - Enumerating Filesystem dataset prefix=
+[2020/05/20-11:45:13.691] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Build HDFSProvider conn=work cpr=/data/work pWCR=/SERGEL_JOBS/work_assigment_aov_bov/data crSA=null crWSA=/data/work rpWSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.692] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.708] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.710] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_156411402_36, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:13.718] [ActivityExecutor-36] [INFO] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Enumerating HDFS Filesystem from root : /data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.721] [ActivityExecutor-36] [INFO] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - HDFS-enumerate depth=0 curContent=6
+[2020/05/20-11:45:13.722] [ActivityExecutor-36] [INFO] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Done HDFS enumeration: nb_paths=5 total_size=36768
+[2020/05/20-11:45:13.724] [ActivityExecutor-36] [INFO] [dku.dataset.hash] running compute_assigment_bov_dlg_NP - Caching readiness for dataset__abu1265__SERGEL_JOBS.work_assigment_aov_bov__NP s=READY h=lODsWBsVbGx9IpDuNNcrDA
+[2020/05/20-11:45:13.724] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Checked source readiness SERGEL_JOBS.work_assigment_aov_bov -> true
+[2020/05/20-11:45:13.725] [ActivityExecutor-36] [DEBUG] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Computing hashes to propagate BEFORE activity
+[2020/05/20-11:45:13.725] [ActivityExecutor-36] [DEBUG] [dku.db.internal] running compute_assigment_bov_dlg_NP - Borrowing a connection. Read-only: false
+[2020/05/20-11:45:13.727] [ActivityExecutor-36] [DEBUG] [dku.dataset.hash] running compute_assigment_bov_dlg_NP - Readiness cache miss for dataset__abu1265__SERGEL_JOBS.work_assigment_aov_bov__NP
+[2020/05/20-11:45:13.728] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.work_assigment_aov_bov connection=work cpr=/data/work resolvedPath=/SERGEL_JOBS/work_assigment_aov_bov connRootSA=nullconnRootWithinSA=/data/work configuredRootPathWithinSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov effectiveRootPathWithinSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.729] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - Enumerating Filesystem dataset prefix=
+[2020/05/20-11:45:13.730] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Build HDFSProvider conn=work cpr=/data/work pWCR=/SERGEL_JOBS/work_assigment_aov_bov/data crSA=null crWSA=/data/work rpWSA=/data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.730] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.746] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.748] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-524689685_36, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:13.754] [ActivityExecutor-36] [INFO] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Enumerating HDFS Filesystem from root : /data/work/SERGEL_JOBS/work_assigment_aov_bov/data
+[2020/05/20-11:45:13.756] [ActivityExecutor-36] [INFO] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - HDFS-enumerate depth=0 curContent=6
+[2020/05/20-11:45:13.757] [ActivityExecutor-36] [INFO] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Done HDFS enumeration: nb_paths=5 total_size=36768
+[2020/05/20-11:45:13.757] [ActivityExecutor-36] [INFO] [dku.dataset.hash] running compute_assigment_bov_dlg_NP - Caching readiness for dataset__abu1265__SERGEL_JOBS.work_assigment_aov_bov__NP s=READY h=lODsWBsVbGx9IpDuNNcrDA
+[2020/05/20-11:45:13.758] [ActivityExecutor-36] [DEBUG] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Recorded 1 hashes before activity run
+[2020/05/20-11:45:13.758] [ActivityExecutor-36] [DEBUG] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Building recipe runner of type
+[2020/05/20-11:45:13.784] [ActivityExecutor-36] [INFO] [dku.flow.impala] running compute_assigment_bov_dlg_NP - Found 1 parts and the index of the select is 0
+[2020/05/20-11:45:13.795] [ActivityExecutor-36] [INFO] [dku.recipes.sql] running compute_assigment_bov_dlg_NP - Substituting variables in SQL query : {
+  "db:sergel_assigment_bov_dlg": "sergel",
+  "db:work_assigment_aov_bov": "work",
+  "DKU_LOCATION_sergel_assigment_bov_dlg": "/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data",
+  "tbl:sergel_assigment_bov_dlg": "sergel_jobs_sergel_assigment_bov_dlg",
+  "tbl:work_assigment_aov_bov": "sergel_jobs_work_assigment_aov_bov",
+  "DKU_LOCATION_work_assigment_aov_bov": "/data/work/SERGEL_JOBS/work_assigment_aov_bov/data"
+}
+[2020/05/20-11:45:13.803] [ActivityExecutor-36] [DEBUG] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Recipe runner built, will use 1 thread(s)
+[2020/05/20-11:45:13.803] [ActivityExecutor-36] [DEBUG] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Starting execution thread: com.dataiku.dip.recipes.code.impala.ImpalaRecipeRunner@591bbd77
+[2020/05/20-11:45:13.804] [ActivityExecutor-36] [DEBUG] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Execution threads started, waiting for activity end
+[2020/05/20-11:45:13.804] [FRT-67-FlowRunnable] [INFO] [dku.flow.activity] act.compute_assigment_bov_dlg_NP - Run thread for activity compute_assigment_bov_dlg_NP starting
+[2020/05/20-11:45:13.806] [FRT-67-FlowRunnable] [INFO] [dku.recipes.hiveql] act.compute_assigment_bov_dlg_NP - The Hive/Impala query recipe can be run in full-SQL mode
+[2020/05/20-11:45:13.818] [FRT-67-FlowRunnable] [INFO] [dku.flow.impala] act.compute_assigment_bov_dlg_NP - Running the Impala query recipe in full-SQL mode
+[2020/05/20-11:45:13.827] [FRT-67-FlowRunnable] [DEBUG] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.827] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - Clear partitions
+[2020/05/20-11:45:13.829] [FRT-67-FlowRunnable] [DEBUG] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - Build HDFSProvider conn=sergel cpr=/data/sergel pWCR=/SERGEL_JOBS/sergel_assigment_bov_dlg/data crSA=null crWSA=/data/sergel rpWSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.829] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.844] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.848] [FRT-67-FlowRunnable] [DEBUG] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_864325756_67, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:13.855] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting partition-wide data-usability ACL: SERGEL_JOBS.sergel_assigment_bov_dlgpartition=<partition:NP>
+[2020/05/20-11:45:13.855] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.871] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.873] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL (single-dir) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg
+[2020/05/20-11:45:13.874] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.874] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.874] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with explicit UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS))
+[2020/05/20-11:45:13.875] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:13.892] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:13.900] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - make HDFS path for pathInDataset= out=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.901] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Doing partition-specific set data-usability ACL on /data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.901] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-including) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.903] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.903] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:13.906] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - Clearing partition as folder : dataset=SERGEL_JOBS.sergel_assigment_bov_dlg partition=NP
+[2020/05/20-11:45:13.906] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - datasetRootPathWithinAuthority=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data partitionPath=/
+[2020/05/20-11:45:13.907] [FRT-67-FlowRunnable] [INFO] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - delete recursive / -> /data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.908] [FRT-67-FlowRunnable] [INFO] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - is a directory true
+[2020/05/20-11:45:13.917] [FRT-67-FlowRunnable] [INFO] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - after delete File does not exist: /data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:13.917] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - Cleared partition 'NP': path= /
+[2020/05/20-11:45:13.918] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Dropping partition if exists dataset=SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:13.921] [FRT-67-FlowRunnable] [DEBUG] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Synchronization script : 
+USE `sergel`;DROP TABLE IF EXISTS `sergel_jobs_sergel_assigment_bov_dlg`;
+[2020/05/20-11:45:13.922] [FRT-67-FlowRunnable] [INFO] [x] act.compute_assigment_bov_dlg_NP - **** Hadoop flavor **** {"flavor":"cdh5","hiveSupportsMREngine":true,"hive3":false}
+[2020/05/20-11:45:13.923] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=default hiveConf=[]/> active=0 idle=0
+[2020/05/20-11:45:13.923] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Creating a new HiveServer2 connection (db=default)
+[2020/05/20-11:45:13.924] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Connecting to HiveServer2: jdbc:hive2://ip-10-85-150-186.eu-west-1.compute.internal:10000/default;principal=hive/ip-10-85-150-186.eu-west-1.compute.internal@DATAMALL.DEV.TELIA.LOCAL;hive.server2.proxy.user=abu1265;;ssl=true;sslTrustStore=/var/lib/cloudera-scm-agent/agent-cert/cm-auto-global_truststore.jks;trustStorePassword=LNpGKRSKL3YzUgJfdYN5jbYnIWfM7dUv4GdACg539dc
+[2020/05/20-11:45:13.927] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Driver version 1.1
+[2020/05/20-11:45:13.937] [FRT-67-FlowRunnable] [INFO] [org.apache.hive.jdbc.Utils] act.compute_assigment_bov_dlg_NP - Supplied authorities: ip-10-85-150-186.eu-west-1.compute.internal:10000
+[2020/05/20-11:45:13.938] [FRT-67-FlowRunnable] [INFO] [org.apache.hive.jdbc.Utils] act.compute_assigment_bov_dlg_NP - Resolved authority: ip-10-85-150-186.eu-west-1.compute.internal:10000
+[2020/05/20-11:45:14.011] [FRT-67-FlowRunnable] [DEBUG] [org.apache.thrift.transport.TSaslClientTransport] act.compute_assigment_bov_dlg_NP - Sending mechanism name GSSAPI and initial response of length 671
+[2020/05/20-11:45:14.254] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Created HiveServer2 connection id=0
+[2020/05/20-11:45:14.260] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Running USE `sergel`
+[2020/05/20-11:45:14.465] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Running DROP TABLE IF EXISTS `sergel_jobs_sergel_assigment_bov_dlg`
+[2020/05/20-11:45:15.125] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=default hiveConf=[]/>
+[2020/05/20-11:45:15.127] [FRT-67-FlowRunnable] [DEBUG] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.128] [FRT-67-FlowRunnable] [DEBUG] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - Build HDFSProvider conn=sergel cpr=/data/sergel pWCR=/SERGEL_JOBS/sergel_assigment_bov_dlg/data crSA=null crWSA=/data/sergel rpWSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.128] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:15.146] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:15.148] [FRT-67-FlowRunnable] [DEBUG] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-1668268152_67, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:15.155] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting gateway ACL (create): SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.155] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:15.172] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:15.175] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Deduping ACLs: group:data_admin:rwx,group:data_developer:rwx,group:administrators:rwx,user:ojp7060:rwx,group:administrators:rwx,group:data_admin:rwx,user:dssuser:rwx,user:impala:rwx,user:hive:rwx,user::rwx,other::---,group::---
+[2020/05/20-11:45:15.176] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting Gateway ACLs  on:/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg -> user:impala:rwx,other::---,group::---,group:administrators:rwx,user:dssuser:rwx,user:hive:rwx,user::rwx,group:data_admin:rwx,group:data_developer:rwx,user:ojp7060:rwx
+[2020/05/20-11:45:15.178] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - connectionRoot=/data/sergel configured=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg chunks=SERGEL_JOBS--sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.178] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Path = /data/sergel chunk=SERGEL_JOBS
+[2020/05/20-11:45:15.179] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Deduping ACLs: user:impala:r-x,user:hive:r-x,group:sensitive_porting:--x,group:interfaces:--x,group:data_team:--x,group:bi_report:--x,group:anonymized:--x,group:sandbox:--x,group:data_developer_telia:--x,group:hr:--x,group:data_science:--x,group:sensitive:--x,group:sergel:--x,group:analytics:--x,group:marketing:--x,group:b2c:--x,group:b2b:--x,group:wholesale:--x,group:readers:--x,group:data_developer:--x,group:work_ds:--x,group:micro:--x,group:purpose_specific:--x,group:administrators:--x,group:data_admin:--x,user:dssuser:rwx,user::rwx
+[2020/05/20-11:45:15.179] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting connection-level ACLs on:/data/sergel/SERGEL_JOBS -> group:b2b:--x,user:impala:r-x,group:administrators:--x,group:marketing:--x,user::rwx,group:b2c:--x,group:anonymized:--x,group:hr:--x,group:sensitive:--x,group:data_science:--x,group:sensitive_porting:--x,group:sergel:--x,group:micro:--x,group:data_developer_telia:--x,group:work_ds:--x,group:bi_report:--x,group:sandbox:--x,user:hive:r-x,group:analytics:--x,group:interfaces:--x,group:data_team:--x,group:readers:--x,group:purpose_specific:--x,user:dssuser:rwx,group:wholesale:--x,group:data_developer:--x,group:data_admin:--x,group::---,other::---,mask::r-x
+[2020/05/20-11:45:15.182] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting partition-wide data-usability ACL: SERGEL_JOBS.sergel_assigment_bov_dlgpartition=<partition:NP>
+[2020/05/20-11:45:15.182] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL (single-dir) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.183] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - make HDFS path for pathInDataset= out=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.183] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Doing partition-specific set data-usability ACL on /data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.183] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-including) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.185] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=0
+[2020/05/20-11:45:15.185] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Creating a new HiveServer2 connection (db=sergel)
+[2020/05/20-11:45:15.185] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Connecting to HiveServer2: jdbc:hive2://ip-10-85-150-186.eu-west-1.compute.internal:10000/sergel;principal=hive/ip-10-85-150-186.eu-west-1.compute.internal@DATAMALL.DEV.TELIA.LOCAL;hive.server2.proxy.user=abu1265;;ssl=true;sslTrustStore=/var/lib/cloudera-scm-agent/agent-cert/cm-auto-global_truststore.jks;trustStorePassword=LNpGKRSKL3YzUgJfdYN5jbYnIWfM7dUv4GdACg539dc
+[2020/05/20-11:45:15.186] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Driver version 1.1
+[2020/05/20-11:45:15.186] [FRT-67-FlowRunnable] [INFO] [org.apache.hive.jdbc.Utils] act.compute_assigment_bov_dlg_NP - Supplied authorities: ip-10-85-150-186.eu-west-1.compute.internal:10000
+[2020/05/20-11:45:15.186] [FRT-67-FlowRunnable] [INFO] [org.apache.hive.jdbc.Utils] act.compute_assigment_bov_dlg_NP - Resolved authority: ip-10-85-150-186.eu-west-1.compute.internal:10000
+[2020/05/20-11:45:15.189] [FRT-67-FlowRunnable] [DEBUG] [org.apache.thrift.transport.TSaslClientTransport] act.compute_assigment_bov_dlg_NP - Sending mechanism name GSSAPI and initial response of length 672
+[2020/05/20-11:45:15.255] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - Created HiveServer2 connection id=1
+[2020/05/20-11:45:15.256] [FRT-67-FlowRunnable] [INFO] [dip.hiverserver2.schema] act.compute_assigment_bov_dlg_NP - List hive databases from connection on sergel
+[2020/05/20-11:45:15.514] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:15.516] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:15.516] [FRT-67-FlowRunnable] [INFO] [dip.hiverserver2.schema] act.compute_assigment_bov_dlg_NP - Find a hive table named 'sergel_jobs_sergel_assigment_bov_dlg' in 'sergel'
+[2020/05/20-11:45:15.648] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:15.650] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:15.650] [FRT-67-FlowRunnable] [INFO] [dip.hiverserver2.schema] act.compute_assigment_bov_dlg_NP - List hive databases from connection on sergel
+[2020/05/20-11:45:15.720] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:15.721] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:15.721] [FRT-67-FlowRunnable] [INFO] [dip.hiverserver2.schema] act.compute_assigment_bov_dlg_NP - Find a hive table named 'sergel_jobs_sergel_assigment_bov_dlg' in 'sergel'
+[2020/05/20-11:45:15.857] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:15.858] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Hive schema is not up to date: (re)synchronize the whole table
+[2020/05/20-11:45:15.859] [FRT-67-FlowRunnable] [DEBUG] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.860] [FRT-67-FlowRunnable] [DEBUG] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - Build HDFSProvider conn=sergel cpr=/data/sergel pWCR=/SERGEL_JOBS/sergel_assigment_bov_dlg/data crSA=null crWSA=/data/sergel rpWSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:15.860] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:15.878] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:15.880] [FRT-67-FlowRunnable] [DEBUG] [dku.fsproviders.hdfs] act.compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-1663876735_67, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:15.886] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting gateway ACL (create): SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.886] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:15.904] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:15.907] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Deduping ACLs: group:data_admin:rwx,group:data_developer:rwx,group:administrators:rwx,user:ojp7060:rwx,group:administrators:rwx,group:data_admin:rwx,user:dssuser:rwx,user:impala:rwx,user:hive:rwx,user::rwx,other::---,group::---
+[2020/05/20-11:45:15.908] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting Gateway ACLs  on:/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg -> user:impala:rwx,other::---,group::---,group:administrators:rwx,user:dssuser:rwx,user:hive:rwx,user::rwx,group:data_admin:rwx,group:data_developer:rwx,user:ojp7060:rwx
+[2020/05/20-11:45:15.910] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - connectionRoot=/data/sergel configured=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg chunks=SERGEL_JOBS--sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.910] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Path = /data/sergel chunk=SERGEL_JOBS
+[2020/05/20-11:45:15.911] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Deduping ACLs: user:impala:r-x,user:hive:r-x,group:sensitive_porting:--x,group:interfaces:--x,group:data_team:--x,group:bi_report:--x,group:anonymized:--x,group:sandbox:--x,group:data_developer_telia:--x,group:hr:--x,group:data_science:--x,group:sensitive:--x,group:sergel:--x,group:analytics:--x,group:marketing:--x,group:b2c:--x,group:b2b:--x,group:wholesale:--x,group:readers:--x,group:data_developer:--x,group:work_ds:--x,group:micro:--x,group:purpose_specific:--x,group:administrators:--x,group:data_admin:--x,user:dssuser:rwx,user::rwx
+[2020/05/20-11:45:15.911] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting connection-level ACLs on:/data/sergel/SERGEL_JOBS -> group:b2b:--x,user:impala:r-x,group:administrators:--x,group:marketing:--x,user::rwx,group:b2c:--x,group:anonymized:--x,group:hr:--x,group:sensitive:--x,group:data_science:--x,group:sensitive_porting:--x,group:sergel:--x,group:micro:--x,group:data_developer_telia:--x,group:work_ds:--x,group:bi_report:--x,group:sandbox:--x,user:hive:r-x,group:analytics:--x,group:interfaces:--x,group:data_team:--x,group:readers:--x,group:purpose_specific:--x,user:dssuser:rwx,group:wholesale:--x,group:data_developer:--x,group:data_admin:--x,group::---,other::---,mask::r-x
+[2020/05/20-11:45:15.913] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Setting dataset-wide data-usability ACL: SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.914] [FRT-67-FlowRunnable] [INFO] [dku.datasets.hdfs.permissions] act.compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-on-children) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg
+[2020/05/20-11:45:15.916] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:15.916] [FRT-67-FlowRunnable] [INFO] [dip.hiverserver2.schema] act.compute_assigment_bov_dlg_NP - List hive databases from connection on sergel
+[2020/05/20-11:45:15.987] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:15.987] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:15.988] [FRT-67-FlowRunnable] [INFO] [dip.hiverserver2.schema] act.compute_assigment_bov_dlg_NP - Find a hive table named 'sergel_jobs_sergel_assigment_bov_dlg' in 'sergel'
+[2020/05/20-11:45:16.108] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:16.110] [FRT-67-FlowRunnable] [DEBUG] [dku.datasets.hdfs] act.compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:16.111] [FRT-67-FlowRunnable] [DEBUG] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:16.126] [FRT-67-FlowRunnable] [INFO] [dku.hadoop] act.compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:16.134] [FRT-67-FlowRunnable] [DEBUG] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Synchronization script : 
+CREATE DATABASE IF NOT EXISTS `sergel`;
+ USE `sergel`;
+ DROP TABLE sergel_jobs_sergel_assigment_bov_dlg;
+CREATE EXTERNAL TABLE sergel_jobs_sergel_assigment_bov_dlg(`knr` string,
+`referanse` string,
+`name1` string,
+`name2` string,
+`adress1` string,
+`adress2` string,
+`zipcode` string,
+`city` string,
+`country` string,
+`identity` string,
+`phone` string,
+`house1` string,
+`house2` string,
+`collector` string,
+`workflow` string,
+`actcode` string,
+`limitint` string,
+`limitdate` string,
+`title` string,
+`commno` string,
+`ref2` string,
+`mail` string,
+`mobile` string,
+`accountno` string,
+`birthdate` string,
+`vatno` string,
+`category` string,
+`origclient` string,
+`casetype` string,
+`srec` string,
+`regarding` string,
+`creditno` string,
+`creditdate` string,
+`condition` string,
+`interesttype` string,
+`interestrate` string,
+`interestuntil` string,
+`originalamount` string,
+`balance` string,
+`interestamount` string,
+`interestdate` string,
+`project` string,
+`curr` string,
+`calcinterest` string,
+`calccost` string,
+`fee` string,
+`extref` string,
+`duedate` string,
+`currencyrate` string,
+`latepaymentfee` string) STORED AS PARQUET  LOCATION 'hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data' TBLPROPERTIES("DSS_DEFAUT_HIVE_TABLE_TAG"="eyJtZ3QiOnRydWUsImZtdCI6IlgwTi9HTiIsInBhcnQiOiIxQjJNMlkiLCJsb2MiOiJZS3A1b3EifQ==","parquet.compression"="SNAPPY") ;
+
+[2020/05/20-11:45:16.135] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=default hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:16.136] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Running CREATE DATABASE IF NOT EXISTS `sergel`
+[2020/05/20-11:45:16.263] [FRT-67-FlowRunnable] [WARN] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Could not create database with : CREATE DATABASE IF NOT EXISTS `sergel` . Trying to simply use database.
+[2020/05/20-11:45:16.342] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Running USE `sergel`
+[2020/05/20-11:45:16.440] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Running DROP TABLE sergel_jobs_sergel_assigment_bov_dlg
+[2020/05/20-11:45:16.533] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Running CREATE EXTERNAL TABLE sergel_jobs_sergel_assigment_bov_dlg(`knr` string,
+`referanse` string,
+`name1` string,
+`name2` string,
+`adress1` string,
+`adress2` string,
+`zipcode` string,
+`city` string,
+`country` string,
+`identity` string,
+`phone` string,
+`house1` string,
+`house2` string,
+`collector` string,
+`workflow` string,
+`actcode` string,
+`limitint` string,
+`limitdate` string,
+`title` string,
+`commno` string,
+`ref2` string,
+`mail` string,
+`mobile` string,
+`accountno` string,
+`birthdate` string,
+`vatno` string,
+`category` string,
+`origclient` string,
+`casetype` string,
+`srec` string,
+`regarding` string,
+`creditno` string,
+`creditdate` string,
+`condition` string,
+`interesttype` string,
+`interestrate` string,
+`interestuntil` string,
+`originalamount` string,
+`balance` string,
+`interestamount` string,
+`interestdate` string,
+`project` string,
+`curr` string,
+`calcinterest` string,
+`calccost` string,
+`fee` string,
+`extref` string,
+`duedate` string,
+`currencyrate` string,
+`latepaymentfee` string) STORED AS PARQUET  LOCATION 'hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data' TBLPROPERTIES("DSS_DEFAUT_HIVE_TABLE_TAG"="eyJtZ3QiOnRydWUsImZtdCI6IlgwTi9HTiIsInBhcnQiOiIxQjJNMlkiLCJsb2MiOiJZS3A1b3EifQ==","parquet.compression"="SNAPPY")
+[2020/05/20-11:45:17.107] [FRT-67-FlowRunnable] [INFO] [dku.hive.hiveserver2.pool] act.compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=default hiveConf=[]/>
+[2020/05/20-11:45:17.108] [FRT-67-FlowRunnable] [INFO] [dku.hive.synchro] act.compute_assigment_bov_dlg_NP - Hive metastore successfully synchronized
+[2020/05/20-11:45:17.108] [FRT-67-FlowRunnable] [INFO] [com.dataiku.dip.impala.ImpalaConfigurator] act.compute_assigment_bov_dlg_NP - Impala JDBC driver loaded
+[2020/05/20-11:45:17.114] [FRT-67-FlowRunnable] [INFO] [dip.connections.impala] act.compute_assigment_bov_dlg_NP - Connecting to jdbc:impala://ip-10-85-150-188.eu-west-1.compute.internal:21050/default;AuthMech=1;KrbRealm=DATAMALL.DEV.TELIA.LOCAL;KrbHostFQDN=ip-10-85-150-188.eu-west-1.compute.internal;KrbServiceName=impala;SSL=1;SSLTrustStore=****;SSLTrustStorePwd=****;DelegationUID=abu1265 with props: {"CAIssuedCertNamesMismatch":"1","AllowSelfSignedCert":"1","AllowSelfSignedCerts":"1"}
+[2020/05/20-11:45:17.129] [FRT-67-FlowRunnable] [INFO] [dip.connections.impala] act.compute_assigment_bov_dlg_NP - Driver version 2.5
+[2020/05/20-11:45:17.178] [FRT-67-FlowRunnable] [DEBUG] [org.apache.thrift.transport.TSaslClientTransport] act.compute_assigment_bov_dlg_NP - Sending mechanism name GSSAPI and initial response of length 674
+[2020/05/20-11:45:17.245] [FRT-67-FlowRunnable] [INFO] [dku.connections.sql.provider] act.compute_assigment_bov_dlg_NP - Driver: ImpalaJDBC (JDBC 4.1) 02.05.38.1058 (2.5)
+[2020/05/20-11:45:17.246] [FRT-67-FlowRunnable] [INFO] [dku.connections.sql.provider] act.compute_assigment_bov_dlg_NP - Database: Impala 2.12.0-cdh5.16.2 (2.12) rowSize=0 stmts=0
+[2020/05/20-11:45:17.305] [FRT-67-FlowRunnable] [DEBUG] [dku.connections.sql.provider] act.compute_assigment_bov_dlg_NP - Close conn=@virtual(impala-jdbc):default-8gUPc1l
+[2020/05/20-11:45:17.307] [FRT-67-FlowRunnable] [INFO] [com.dataiku.dip.impala.ImpalaUpdater] act.compute_assigment_bov_dlg_NP - Invalidated Impala metadata for table sergel.sergel_jobs_sergel_assigment_bov_dlg
+[2020/05/20-11:45:17.312] [FRT-67-FlowRunnable] [INFO] [dku.recipes.sql] act.compute_assigment_bov_dlg_NP - Substituting variables in SQL query : {
+  "db:sergel_assigment_bov_dlg": "sergel",
+  "db:work_assigment_aov_bov": "work",
+  "DKU_LOCATION_sergel_assigment_bov_dlg": "/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data",
+  "tbl:sergel_assigment_bov_dlg": "sergel_jobs_sergel_assigment_bov_dlg",
+  "tbl:work_assigment_aov_bov": "sergel_jobs_work_assigment_aov_bov",
+  "DKU_LOCATION_work_assigment_aov_bov": "/data/work/SERGEL_JOBS/work_assigment_aov_bov/data"
+}
+[2020/05/20-11:45:17.314] [FRT-67-FlowRunnable] [INFO] [dip.connections.impala] act.compute_assigment_bov_dlg_NP - Connecting to jdbc:impala://ip-10-85-150-188.eu-west-1.compute.internal:21050/sergel;AuthMech=1;KrbRealm=DATAMALL.DEV.TELIA.LOCAL;KrbHostFQDN=ip-10-85-150-188.eu-west-1.compute.internal;KrbServiceName=impala;SSL=1;SSLTrustStore=****;SSLTrustStorePwd=****;DelegationUID=abu1265 with props: {"CAIssuedCertNamesMismatch":"1","AllowSelfSignedCert":"1","AllowSelfSignedCerts":"1"}
+[2020/05/20-11:45:17.314] [FRT-67-FlowRunnable] [INFO] [dip.connections.impala] act.compute_assigment_bov_dlg_NP - Driver version 2.5
+[2020/05/20-11:45:17.316] [FRT-67-FlowRunnable] [DEBUG] [org.apache.thrift.transport.TSaslClientTransport] act.compute_assigment_bov_dlg_NP - Sending mechanism name GSSAPI and initial response of length 674
+[2020/05/20-11:45:17.333] [FRT-67-FlowRunnable] [INFO] [dku.connections.sql.provider] act.compute_assigment_bov_dlg_NP - Driver: ImpalaJDBC (JDBC 4.1) 02.05.38.1058 (2.5)
+[2020/05/20-11:45:17.333] [FRT-67-FlowRunnable] [INFO] [dku.connections.sql.provider] act.compute_assigment_bov_dlg_NP - Database: Impala 2.12.0-cdh5.16.2 (2.12) rowSize=0 stmts=0
+[2020/05/20-11:45:17.337] [FRT-67-FlowRunnable] [INFO] [dku.flow.sql] act.compute_assigment_bov_dlg_NP - Executing statement: 
+[2020/05/20-11:45:17.338] [FRT-67-FlowRunnable] [INFO] [dku.flow.sql] act.compute_assigment_bov_dlg_NP - set COMPRESSION_CODEC=SNAPPY
+[2020/05/20-11:45:17.343] [FRT-67-FlowRunnable] [INFO] [dku.flow.sql] act.compute_assigment_bov_dlg_NP - Statement done
+[2020/05/20-11:45:17.343] [FRT-67-FlowRunnable] [INFO] [dku.flow.sql] act.compute_assigment_bov_dlg_NP - Executing statement: 
+[2020/05/20-11:45:17.343] [FRT-67-FlowRunnable] [INFO] [dku.flow.sql] act.compute_assigment_bov_dlg_NP - INSERT INTO TABLE `sergel`.`sergel_jobs_sergel_assigment_bov_dlg` 
+select
+'A000023' as knr,
+substr(concat(cast(ban as string), repeat('$', 20)), 1, 20)  as referanse,
+case when substr(ACCOUNT_TYPE_ID,1,1)='R' then substr(name, 1, instr(name, ' ', -1)) else '' end as name1,
+case when substr(ACCOUNT_TYPE_ID,1,1)='R' then substr(name, instr(name, ' ', -1) + 1, length(name)) else coalesce(name, '') end as name2,
+repeat('$', 30) as adress1,
+address_primary as adress2,
+substr(concat(cast(adr_zip as string), repeat('$', 7)), 1, 7) as zipcode,
+adr_city as city,
+'DK ' as country,
+substr(concat(coalesce(cast(cvr_cpr_number as string), ''), repeat('$', 13)), 1, 13) as identity,
+substr(concat(coalesce(cast(subscriber_number as string), ''), repeat('$', 20)), 1, 20) as phone,
+repeat('$', 5) as house1,
+repeat('$', 5) as house2,
+'SE ' as collector,
+'010' as workflow,
+repeat('$', 3) as actcode,
+repeat('$', 2) as limitint,
+repeat('$', 8) as limitdate,
+repeat('$', 15) as title,
+repeat('$', 3) as commno,
+substr(concat(cast(payment_method_id as string), repeat('$', 13)), 1, 13) as ref2,
+repeat('$', 39) as mail,
+repeat('$', 20) as mobile,
+repeat('$', 15) as accountno,
+case
+when birth_date is not null then
+coalesce(translate(to_date(birth_date), '-', ''), repeat('$', 8))
+else repeat('$', 8) end
+as birthdate,
+repeat('$', 14) as vatno,
+case when substr(account_type_id,1,1)='D' then concat('B', repeat('$', 7)) else concat('B', repeat('$', 7)) end as category,
+repeat('$', 30) as origclient,
+concat('007', '\\n') as casetype,
+'S ' as srec,
+concat('telefoni', repeat('$', 72)) as regarding,
+substr(concat(cast(invoice_no as string), repeat('$', 20)), 1, 20) as creditno,
+translate(to_date(bill_date), '-', '') as creditdate,
+repeat('$', 2) as condition,
+'0' as interesttype,
+'0000' as interestrate,
+repeat('$', 8) as interestuntil,
+case when open_amt<0 then 
+	concat('-', substr(concat(repeat('0', 9), cast(round(open_amt*100) as string)), length(concat(repeat('0', 9), cast(round(open_amt*100) as string)))-8, 9))  
+	else 
+	substr(concat(repeat('0', 10), cast(round(open_amt*100) as string)), length(concat(repeat('0', 10), cast(round(open_amt*100) as string)))-9, 10)
+end as originalamount,
+case when open_amt<0 then 
+	concat('-', substr(concat(repeat('0', 9), cast(round(open_amt*100) as string)), length(concat(repeat('0', 9), cast(round(open_amt*100) as string)))-8, 9))  
+	else 
+	substr(concat(repeat('0', 10), cast(round(open_amt*100) as string)), length(concat(repeat('0', 10), cast(round(open_amt*100) as string)))-9, 10)
+end as balance,
+'0000000000' as interestamount,
+translate(to_date(adddate(due_date, 1)), '-', '') as interestdate,
+repeat('$', 8) as project,
+'DKK' as curr,
+'N' as calcinterest,
+'N' as calccost,
+case 
+when open_fee is not null then
+substr(concat(repeat('0', 10), cast(round(open_fee*100) as string)), length(concat(repeat('0', 10), cast(round(open_fee*100) as string)))-9, 10)
+else
+repeat('0', 10)
+end as fee,
+repeat('$', 25) as extref,
+translate(to_date(due_date), '-', '') as duedate,
+repeat('0', 10) as currencyrate,
+'0' as latepaymentfee
+FROM `work`.`sergel_jobs_work_assigment_aov_bov` `__input_table`
+where agncy_code='BOV' and
+account_type_id IN ('R-7A','R-8A','D-7B')
+order by ban, invoice_no
+[2020/05/20-11:45:20.671] [FRT-67-FlowRunnable] [INFO] [dku.flow.sql] act.compute_assigment_bov_dlg_NP - Statement done
+[2020/05/20-11:45:20.671] [FRT-67-FlowRunnable] [DEBUG] [dku.connections.sql.provider] act.compute_assigment_bov_dlg_NP - Close conn=@virtual(impala-jdbc):sergel-j6hWORX
+[2020/05/20-11:45:20.672] [FRT-67-FlowRunnable] [INFO] [dku.flow.activity] act.compute_assigment_bov_dlg_NP - Run thread done for activity compute_assigment_bov_dlg_NP
+[2020/05/20-11:45:20.807] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - activity is finished
+[2020/05/20-11:45:20.807] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Executing default post-activity lifecycle hook
+[2020/05/20-11:45:20.810] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.810] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Build HDFSProvider conn=sergel cpr=/data/sergel pWCR=/SERGEL_JOBS/sergel_assigment_bov_dlg/data crSA=null crWSA=/data/sergel rpWSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.811] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:20.826] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:20.828] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-385288104_36, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:20.833] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting dataset-wide data-usability ACL: SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:20.834] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:20.848] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:20.850] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-on-children) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg
+[2020/05/20-11:45:20.851] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:20.851] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:20.852] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with explicit UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS))
+[2020/05/20-11:45:20.852] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:20.865] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:20.873] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-on-children) path=hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.877] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.878] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Build HDFSProvider conn=sergel cpr=/data/sergel pWCR=/SERGEL_JOBS/sergel_assigment_bov_dlg/data crSA=null crWSA=/data/sergel rpWSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.878] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:20.933] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:20.936] [ActivityExecutor-36] [DEBUG] [dku.fsproviders.hdfs] running compute_assigment_bov_dlg_NP - Built Hadoop FS for: null -> DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_2096652120_36, ugi=abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)]]
+[2020/05/20-11:45:20.942] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting gateway ACL (create): SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:20.942] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:20.957] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:20.959] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group:data_admin:rwx,group:data_developer:rwx,group:administrators:rwx,user:ojp7060:rwx,group:administrators:rwx,group:data_admin:rwx,user:dssuser:rwx,user:impala:rwx,user:hive:rwx,user::rwx,other::---,group::---
+[2020/05/20-11:45:20.960] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting Gateway ACLs  on:/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg -> user:impala:rwx,other::---,group::---,group:administrators:rwx,user:dssuser:rwx,user:hive:rwx,user::rwx,group:data_admin:rwx,group:data_developer:rwx,user:ojp7060:rwx
+[2020/05/20-11:45:20.962] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - connectionRoot=/data/sergel configured=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg chunks=SERGEL_JOBS--sergel_assigment_bov_dlg
+[2020/05/20-11:45:20.962] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Path = /data/sergel chunk=SERGEL_JOBS
+[2020/05/20-11:45:20.963] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: user:impala:r-x,user:hive:r-x,group:sensitive_porting:--x,group:interfaces:--x,group:data_team:--x,group:bi_report:--x,group:anonymized:--x,group:sandbox:--x,group:data_developer_telia:--x,group:hr:--x,group:data_science:--x,group:sensitive:--x,group:sergel:--x,group:analytics:--x,group:marketing:--x,group:b2c:--x,group:b2b:--x,group:wholesale:--x,group:readers:--x,group:data_developer:--x,group:work_ds:--x,group:micro:--x,group:purpose_specific:--x,group:administrators:--x,group:data_admin:--x,user:dssuser:rwx,user::rwx
+[2020/05/20-11:45:20.963] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting connection-level ACLs on:/data/sergel/SERGEL_JOBS -> group:b2b:--x,user:impala:r-x,group:administrators:--x,group:marketing:--x,user::rwx,group:b2c:--x,group:anonymized:--x,group:hr:--x,group:sensitive:--x,group:data_science:--x,group:sensitive_porting:--x,group:sergel:--x,group:micro:--x,group:data_developer_telia:--x,group:work_ds:--x,group:bi_report:--x,group:sandbox:--x,user:hive:r-x,group:analytics:--x,group:interfaces:--x,group:data_team:--x,group:readers:--x,group:purpose_specific:--x,user:dssuser:rwx,group:wholesale:--x,group:data_developer:--x,group:data_admin:--x,group::---,other::---,mask::r-x
+[2020/05/20-11:45:20.965] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Setting partition-wide data-usability ACL: SERGEL_JOBS.sergel_assigment_bov_dlgpartition=<partition:NP>
+[2020/05/20-11:45:20.965] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (single-dir) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg
+[2020/05/20-11:45:20.966] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:20.966] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:20.966] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with explicit UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS))
+[2020/05/20-11:45:20.967] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: hive (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:20.980] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:20.987] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - make HDFS path for pathInDataset= out=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.988] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Doing partition-specific set data-usability ACL on /data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.988] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL (recursive-including) path=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:20.989] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Deduping ACLs: group::r-x,other::r-x,user:dssuser:rwx
+[2020/05/20-11:45:20.990] [ActivityExecutor-36] [INFO] [dku.datasets.hdfs.permissions] running compute_assigment_bov_dlg_NP - Set data-usability ACL path=hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data set ACLs: other::r-x,group::r-x,user:dssuser:rwx
+[2020/05/20-11:45:20.993] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:20.993] [ActivityExecutor-36] [INFO] [dip.hiverserver2.schema] running compute_assigment_bov_dlg_NP - List hive databases from connection on sergel
+[2020/05/20-11:45:21.067] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:21.067] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:21.068] [ActivityExecutor-36] [INFO] [dip.hiverserver2.schema] running compute_assigment_bov_dlg_NP - Find a hive table named 'sergel_jobs_sergel_assigment_bov_dlg' in 'sergel'
+[2020/05/20-11:45:21.207] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:21.207] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:21.208] [ActivityExecutor-36] [INFO] [dku.flow.hive.handler] running compute_assigment_bov_dlg_NP - Get schema of hive table sergel_jobs_sergel_assigment_bov_dlg on sergel
+[2020/05/20-11:45:21.350] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:21.351] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:21.352] [ActivityExecutor-36] [INFO] [dip.hiverserver2.schema] running compute_assigment_bov_dlg_NP - List hive databases from connection on sergel
+[2020/05/20-11:45:21.422] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:21.422] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:21.423] [ActivityExecutor-36] [INFO] [dip.hiverserver2.schema] running compute_assigment_bov_dlg_NP - Find a hive table named 'sergel_jobs_sergel_assigment_bov_dlg' in 'sergel'
+[2020/05/20-11:45:21.578] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:21.578] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:21.579] [ActivityExecutor-36] [INFO] [dku.flow.hive.handler] running compute_assigment_bov_dlg_NP - Get schema of hive table sergel_jobs_sergel_assigment_bov_dlg on sergel
+[2020/05/20-11:45:21.718] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=sergel hiveConf=[]/>
+[2020/05/20-11:45:21.728] [ActivityExecutor-36] [INFO] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Hive schema is up to date: (re)synchronizing a single partition
+[2020/05/20-11:45:21.729] [ActivityExecutor-36] [INFO] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Since Hive table schema/partitioning/location cannot be checked, we assume that everything is up to date
+[2020/05/20-11:45:21.730] [ActivityExecutor-36] [DEBUG] [dku.datasets.hdfs] running compute_assigment_bov_dlg_NP - HDFS dataset handler dataset=SERGEL_JOBS.sergel_assigment_bov_dlg connection=sergel cpr=/data/sergel resolvedPath=/SERGEL_JOBS/sergel_assigment_bov_dlg connRootSA=nullconnRootWithinSA=/data/sergel configuredRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg effectiveRootPathWithinSA=/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data
+[2020/05/20-11:45:21.730] [ActivityExecutor-36] [DEBUG] [dku.hadoop] running compute_assigment_bov_dlg_NP - Initializing Hadoop FS with context UGI: abu1265 (auth:PROXY) via dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS) (login: dssuser@DATAMALL.DEV.TELIA.LOCAL (auth:KERBEROS)) rootPathURI=null
+[2020/05/20-11:45:21.745] [ActivityExecutor-36] [INFO] [dku.hadoop] running compute_assigment_bov_dlg_NP - Forcing disable of defaultScheme cache (#8388): hdfs
+[2020/05/20-11:45:21.749] [ActivityExecutor-36] [DEBUG] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Synchronization script : 
+CREATE DATABASE IF NOT EXISTS `sergel`;
+ USE `sergel`;
+ CREATE EXTERNAL TABLE  IF NOT EXISTS sergel_jobs_sergel_assigment_bov_dlg(`knr` string,
+`referanse` string,
+`name1` string,
+`name2` string,
+`adress1` string,
+`adress2` string,
+`zipcode` string,
+`city` string,
+`country` string,
+`identity` string,
+`phone` string,
+`house1` string,
+`house2` string,
+`collector` string,
+`workflow` string,
+`actcode` string,
+`limitint` string,
+`limitdate` string,
+`title` string,
+`commno` string,
+`ref2` string,
+`mail` string,
+`mobile` string,
+`accountno` string,
+`birthdate` string,
+`vatno` string,
+`category` string,
+`origclient` string,
+`casetype` string,
+`srec` string,
+`regarding` string,
+`creditno` string,
+`creditdate` string,
+`condition` string,
+`interesttype` string,
+`interestrate` string,
+`interestuntil` string,
+`originalamount` string,
+`balance` string,
+`interestamount` string,
+`interestdate` string,
+`project` string,
+`curr` string,
+`calcinterest` string,
+`calccost` string,
+`fee` string,
+`extref` string,
+`duedate` string,
+`currencyrate` string,
+`latepaymentfee` string) STORED AS PARQUET  LOCATION 'hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data' TBLPROPERTIES("DSS_DEFAUT_HIVE_TABLE_TAG"="eyJtZ3QiOnRydWUsImZtdCI6IlgwTi9HTiIsInBhcnQiOiIxQjJNMlkiLCJsb2MiOiJZS3A1b3EifQ==","parquet.compression"="SNAPPY") ;
+
+[2020/05/20-11:45:21.749] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - take key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=default hiveConf=[]/> active=0 idle=1
+[2020/05/20-11:45:21.750] [ActivityExecutor-36] [INFO] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Running CREATE DATABASE IF NOT EXISTS `sergel`
+[2020/05/20-11:45:21.819] [ActivityExecutor-36] [WARN] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Could not create database with : CREATE DATABASE IF NOT EXISTS `sergel` . Trying to simply use database.
+[2020/05/20-11:45:21.925] [ActivityExecutor-36] [INFO] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Running USE `sergel`
+[2020/05/20-11:45:22.009] [ActivityExecutor-36] [INFO] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Running CREATE EXTERNAL TABLE  IF NOT EXISTS sergel_jobs_sergel_assigment_bov_dlg(`knr` string,
+`referanse` string,
+`name1` string,
+`name2` string,
+`adress1` string,
+`adress2` string,
+`zipcode` string,
+`city` string,
+`country` string,
+`identity` string,
+`phone` string,
+`house1` string,
+`house2` string,
+`collector` string,
+`workflow` string,
+`actcode` string,
+`limitint` string,
+`limitdate` string,
+`title` string,
+`commno` string,
+`ref2` string,
+`mail` string,
+`mobile` string,
+`accountno` string,
+`birthdate` string,
+`vatno` string,
+`category` string,
+`origclient` string,
+`casetype` string,
+`srec` string,
+`regarding` string,
+`creditno` string,
+`creditdate` string,
+`condition` string,
+`interesttype` string,
+`interestrate` string,
+`interestuntil` string,
+`originalamount` string,
+`balance` string,
+`interestamount` string,
+`interestdate` string,
+`project` string,
+`curr` string,
+`calcinterest` string,
+`calccost` string,
+`fee` string,
+`extref` string,
+`duedate` string,
+`currencyrate` string,
+`latepaymentfee` string) STORED AS PARQUET  LOCATION 'hdfs://devhanameservice/data/sergel/SERGEL_JOBS/sergel_assigment_bov_dlg/data' TBLPROPERTIES("DSS_DEFAUT_HIVE_TABLE_TAG"="eyJtZ3QiOnRydWUsImZtdCI6IlgwTi9HTiIsInBhcnQiOiIxQjJNMlkiLCJsb2MiOiJZS3A1b3EifQ==","parquet.compression"="SNAPPY")
+[2020/05/20-11:45:22.093] [ActivityExecutor-36] [INFO] [dku.hive.hiveserver2.pool] running compute_assigment_bov_dlg_NP - give key <Key: authCtx=<AC:user:abu1265 via: ticket:job> clusterId=__builtin__ hadoopUser=abu1265 db=default hiveConf=[]/>
+[2020/05/20-11:45:22.094] [ActivityExecutor-36] [INFO] [dku.hive.synchro] running compute_assigment_bov_dlg_NP - Hive metastore successfully synchronized
+[2020/05/20-11:45:22.097] [ActivityExecutor-36] [INFO] [dip.connections.impala] running compute_assigment_bov_dlg_NP - Connecting to jdbc:impala://ip-10-85-150-188.eu-west-1.compute.internal:21050/default;AuthMech=1;KrbRealm=DATAMALL.DEV.TELIA.LOCAL;KrbHostFQDN=ip-10-85-150-188.eu-west-1.compute.internal;KrbServiceName=impala;SSL=1;SSLTrustStore=****;SSLTrustStorePwd=****;DelegationUID=abu1265 with props: {"CAIssuedCertNamesMismatch":"1","AllowSelfSignedCert":"1","AllowSelfSignedCerts":"1"}
+[2020/05/20-11:45:22.097] [ActivityExecutor-36] [INFO] [dip.connections.impala] running compute_assigment_bov_dlg_NP - Driver version 2.5
+[2020/05/20-11:45:22.100] [ActivityExecutor-36] [DEBUG] [org.apache.thrift.transport.TSaslClientTransport] running compute_assigment_bov_dlg_NP - Sending mechanism name GSSAPI and initial response of length 674
+[2020/05/20-11:45:22.116] [ActivityExecutor-36] [INFO] [dku.connections.sql.provider] running compute_assigment_bov_dlg_NP - Driver: ImpalaJDBC (JDBC 4.1) 02.05.38.1058 (2.5)
+[2020/05/20-11:45:22.116] [ActivityExecutor-36] [INFO] [dku.connections.sql.provider] running compute_assigment_bov_dlg_NP - Database: Impala 2.12.0-cdh5.16.2 (2.12) rowSize=0 stmts=0
+[2020/05/20-11:45:22.139] [ActivityExecutor-36] [DEBUG] [dku.connections.sql.provider] running compute_assigment_bov_dlg_NP - Close conn=@virtual(impala-jdbc):default-Qd69hEW
+[2020/05/20-11:45:22.139] [ActivityExecutor-36] [INFO] [com.dataiku.dip.impala.ImpalaUpdater] running compute_assigment_bov_dlg_NP - Invalidated Impala metadata for table sergel.sergel_jobs_sergel_assigment_bov_dlg
+[2020/05/20-11:45:22.140] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Activity successful, computing metrics and running checks
+[2020/05/20-11:45:22.271] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Activity checks produced 0 values
+[2020/05/20-11:45:22.272] [ActivityExecutor-36] [DEBUG] [dku.db.internal] running compute_assigment_bov_dlg_NP - Borrowing a connection. Read-only: false
+[2020/05/20-11:45:22.272] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Activity is successful, computing timestamps to propagate
+[2020/05/20-11:45:22.276] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Activity is successful, propagating 3 timestamps
+[2020/05/20-11:45:22.276] [ActivityExecutor-36] [INFO] [dku.timestamps.sql] running compute_assigment_bov_dlg_NP - Starting to propagate 3 hashes
+[2020/05/20-11:45:22.282] [ActivityExecutor-36] [DEBUG] [dku.connections.sql.provider] running compute_assigment_bov_dlg_NP - Commit conn=dssdb-h2-flow_state-fAs8OFE
+[2020/05/20-11:45:22.282] [ActivityExecutor-36] [INFO] [dku.timestamps.sql] running compute_assigment_bov_dlg_NP - Hashes propagated in 6 ms
+[2020/05/20-11:45:22.282] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Removing samples for SERGEL_JOBS.sergel_assigment_bov_dlg
+[2020/05/20-11:45:22.283] [ActivityExecutor-36] [INFO] [dku.flow.activity] running compute_assigment_bov_dlg_NP - Done post-activity tasks
