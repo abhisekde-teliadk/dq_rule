@@ -5,9 +5,6 @@ import os
 import re
 import sys
 
-def get_impala_ip():
-    
-
 def get_from_register( url, asDict = False ):
     r = requests.get(registerurl+url)
     assert r.ok, 'Cannot retrieve ['+url+'] from the registry!'
@@ -33,7 +30,6 @@ def run_command(command):
         return []
     else:
         raise Exception(e)
-
 
 # MAIN
 e = os.environ
