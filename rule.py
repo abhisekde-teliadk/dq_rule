@@ -53,8 +53,6 @@ rules_array = [
 
 rules = pd.DataFrame(data=rules_array, columns=["rule_id", "check_id"])
 
-rules[]
-
 def check_rule(rule_id):
     rules = checks[checks["check_id"] == rules[rules["rule_id"] == rule_id]["check_id"]][["statement_1", "relation", "statement_2"]]
     check_list = rules.join(other=checks, on="check_id", how="inner", lsuffix="_r")
