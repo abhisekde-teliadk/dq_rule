@@ -16,6 +16,7 @@ def get_impala_url():
     return impd
         
 def run_sql(impd, statement):
+    print(statement)
     m = re.compile('^Fetched (\d+) row.*')
     cmd = Popen(["impala-shell","-i", impd ,"--ssl", "-B", "-q", statement], stdout= PIPE, stderr=PIPE )
     (o , e) = cmd.communicate()
