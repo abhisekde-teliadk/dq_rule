@@ -20,6 +20,9 @@ def __get_impala_url__():
     return impd
 
 def run_sql(command):
+    print(type(command), ": ", command)
+    return command
+    
     impd = __get_impala_url__()
     cmd = Popen(["kinit","-k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
     (o , e) = cmd.communicate()
