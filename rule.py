@@ -35,5 +35,5 @@ def run_sql(impd, statement):
 
 # MAIN
 impd = get_impala_url()
-sql_output = run_sql(sys.argv[0])
+sql_output = run_sql(impd, sys.argv[0])
 print(sql_output)
