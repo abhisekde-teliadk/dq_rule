@@ -5,18 +5,29 @@ import os
 import re
 import sys
 
-def get_from_register( url, asDict = False ):
-    r = requests.get(registerurl+url)
+def get_impala_url():
+    cmd = Popen(["kinit","-k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
+    (o , e) = cmd.communicate()
+    assert len(e) == 0, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
+
+    env = os.environ
+    assert env.get('TF_KDCIP','') != '', 'Cannot find KDC IP in environment variables!'
+    kdcip = env['TF_KDCIP']
+    url = 'http://' + kdcip + ':5000/service/impalad?ip=1'
+
+    impd = ''
+    try:
+        r = requests.get(url)
+        impd = r.text
+    except Exception as e:
+        print('Cannot retrieve ['+url+'] from the registry!')
     assert r.ok, 'Cannot retrieve ['+url+'] from the registry!'
-    if asDict:
-        return json.loads(r.text)
-    else:
-        return r.text
-        
-def run_command(command):
+    return impd
+
+def run_sql(impd, command):
     print(command)
     m = re.compile('^Fetched (\d+) row.*')
-    cmd = Popen(["impala-shell","-i",impd,"--ssl","-B","-q",command], stdout= PIPE, stderr=PIPE )
+    cmd = Popen(["impala-shell", "-i", impd, "--ssl", "-B", "-q", command], stdout= PIPE, stderr=PIPE )
     (o , e) = cmd.communicate()
     if cmd.returncode == 0:
         fetched = None
@@ -33,14 +44,10 @@ def run_command(command):
         raise Exception(e)
 
 # MAIN
-e = os.environ
-assert e.get('TF_KDCIP','') != '', 'Cannot find KDC IP in environment variables!'
-kdcip = e['TF_KDCIP']
-registerurl = "http://"+kdcip+":5000/"
-impd = get_from_register('service/impalad?ip=1' )    
-global_cfg = get_from_register('config/global',True)
-cmd = Popen(["kinit","k","-t","/home/centos/impala.keytab","impala"], stdout= PIPE, stderr=PIPE ) 
-(o , e) = cmd.communicate()
-assert e, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
-sql_output = run_command(sys.argv[0])
-print(sql_output)
+impala_url = get_impala_url()
+if len(impala_url) > 0:
+    sql_output = run_sql(sys.argv[0])
+    print(sql_output)
+else:
+    print('SQL execution failed!')
+    
