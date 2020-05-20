@@ -65,3 +65,6 @@ def check_rule(rule_id):
     q2["out_2"] = run_sql(q2["statement_y"])[0][0]
     q2["result"] = q2["out_1"] == q2["out_2"]
     print(q2)
+
+# MAIN
+check_rule(1)
