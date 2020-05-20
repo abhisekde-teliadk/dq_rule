@@ -14,6 +14,7 @@ def get_from_register( url, asDict = False ):
         return r.text
         
 def run_command(command):
+    print(command)
     m = re.compile('^Fetched (\d+) row.*')
     cmd = Popen(["impala-shell","-i",impd,"--ssl","-B","-q",command], stdout= PIPE, stderr=PIPE )
     (o , e) = cmd.communicate()
