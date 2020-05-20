@@ -1,5 +1,4 @@
 from impala import run_sql
-from impala import 
 import pandas as pd
 
 statement_array = [
