@@ -1,4 +1,4 @@
-from database import __impala__, SQLite3
+from database import Impala, SQLite3
 import pandas as pd
 from datetime import datetime
 
