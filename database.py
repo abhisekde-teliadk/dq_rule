@@ -41,8 +41,6 @@ class SQLite3:
             self.connection.commit()
             self.connection.close()
 
-    def 
-
 class Impala:  
     def __init__(self):
         env = os.environ
