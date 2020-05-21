@@ -47,6 +47,7 @@ class DQRule:
         # final o/p
         self.check_results = result_c
         self.rule_result = result_r
+        print(result_c)
 
     def __init__(self, rule_id):
         self.__repo__ = SQLite3()
