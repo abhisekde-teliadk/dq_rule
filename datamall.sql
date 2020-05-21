@@ -31,6 +31,5 @@ insert into rules values(1, "", 4);
 
 create table rule_result(rule_result_id integer primary key  autoincrement, rule_id integer not null, result text, exec_date text not null, foreign key(rule_id) references rules);
 
-create table check_result(check_result_id integer primary key  autoincrement, rule_result_id integer, check_id integer not null, result text, exec_date text not null, foreign key(check_id) references checks, foreign key(rule_result_id) references rule_result);
+create table check_result(check_result_id integer primary key  autoincrement, check_id integer not null, result text, exec_date text not null, foreign key(check_id) references checks);
 
-create table statement_result(statement_result_id integer primary key  autoincrement, check_result_id integer, statement_id integer not null, result text, exec_date text not null, foreign key(statement_id) references statements, foreign key(check_result_id) references check_result);
