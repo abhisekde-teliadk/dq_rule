@@ -53,8 +53,8 @@ class DQRule:
         self.rule_id = rule_id
         self.__repo__ = SQLite3()
         self.__impala__ = Impala()
-        self.__sql1__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.checkid = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + rule_id.__str__())
-        self.__sql2__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.checkid = r.check_id join statements s on (s.statement_id = c.statement_2) where r.rule_id = " + rule_id.__str__())
-        self.__check__ = self.__repo__.run_sql("select c.* from rules r join checks c on c.checkid = r.check_id where r.rule_id = 1")
+        self.__sql1__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + rule_id.__str__())
+        self.__sql2__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_2) where r.rule_id = " + rule_id.__str__())
+        self.__check__ = self.__repo__.run_sql("select c.* from rules r join checks c on c.check_id = r.check_id where r.rule_id = 1")
         self.check_results = []
         self.rule_result = ''
