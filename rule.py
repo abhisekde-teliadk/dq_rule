@@ -50,12 +50,16 @@ class DQRule:
         sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_r, exec_ts)
         print(sql)
         self.__repo__.run_sql(sql)
-        self.__repo__.close()
+
 
         # final o/p
         self.check_results = result_c
         self.rule_result = result_r
+        print("Check status: ")
         print(result_c)
+        print("Rule status: " + result_r)
+
+        self.__repo__.close()
 
     def __init__(self, rule_id):
         self.rule_id = rule_id

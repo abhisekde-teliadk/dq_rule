@@ -38,6 +38,7 @@ class SQLite3:
 
     def close(self):
         if self.connection:
+            self.connection.commit()
             self.connection.close()
 
 class Impala:  
