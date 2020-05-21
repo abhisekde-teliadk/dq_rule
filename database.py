@@ -10,7 +10,7 @@ import sys
 
 class SQLite3:
     def __init__(self, db_file="datamall.db"):
-        self.db_file = db_file
+        self.__db_file__ = db_file
         self.connection = self.__create_connection__(db_file)
         assert self.connection != None, "Can not open DB " + db_file
 
@@ -40,6 +40,8 @@ class SQLite3:
         if self.connection:
             self.connection.commit()
             self.connection.close()
+
+    def 
 
 class Impala:  
     def __init__(self):

@@ -46,12 +46,14 @@ class DQRule:
         sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_r, exec_ts)
         #print(sql)
         self.__repo__.run_sql(sql)
+        self.__repo__.connection.commit()
 
         max_rule_result = self.__repo__.run_sql("select max(rule_result_id) from rule_result")
         for l in range(0, r_max):
             sql = 'insert into check_result(rule_result_id, check_id, result, exec_date) values({}, {} "{}", "{}")'.format(max_rule_result.__str__(), self.__check__[0][0].__str__(), result_c[l], exec_ts)
             self.__repo__.run_sql(sql)
-
+            self.__repo__.connection.commit()
+            
             max_rule_checks = self.__repo__.run_sql("select max(check_result_id) from check_result")
             for j in range(0, r_max):
                 sql = 'insert into statement_result(check_result_id, statement_id, result, exec_date) values({}, {} "{}", "{}")'.format(max_rule_checks.__str__(), self.__sql1__[j][0].__str__(), result_1[j].__str__(), exec_ts)
