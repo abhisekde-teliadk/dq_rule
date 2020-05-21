@@ -60,7 +60,7 @@ class Impala:
         assert len(e) == 0, 'Can initiate Kerberos ticket with: ' + "kinit -k -t /home/centos/impala.keytab impala"
         m = re.compile('^Fetched (\d+) row.*')
         cmd_arr = ["impala-shell", "-i", self.impd, "--ssl", "-B", "-q", command]
-        print("Command: ", " ".join(cmd_arr))
+        print(" ".join(cmd_arr))
         cmd = Popen(cmd_arr, stdout= PIPE, stderr=PIPE )
         (o , e) = cmd.communicate()
         if cmd.returncode == 0:

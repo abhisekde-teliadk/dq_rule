@@ -12,11 +12,15 @@ class DQRule:
 
         for l in self.__sql1__:
             sql = l[2]
-            result_1.append(self.__impala__.run_sql(sql))
+            result = self.__impala__.run_sql(sql)
+            result_1.append(result)
+            print(self.rule_id.__str__() + ".1: " + result)
 
         for l in self.__sql2__:
             sql = l[2]
-            result_2.append(self.__impala__.run_sql(sql))
+            result = self.__impala__.run_sql(sql)
+            result_2.append(result)
+            print(self.rule_id.__str__() + ".2: " + result)
 
         for i in range(0, len(self.__check__)):
             relation = self.__check__[i][3]
@@ -53,8 +57,8 @@ class DQRule:
         self.rule_id = rule_id
         self.__repo__ = SQLite3()
         self.__impala__ = Impala()
-        self.__sql1__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + rule_id.__str__())
-        self.__sql2__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_2) where r.rule_id = " + rule_id.__str__())
+        self.__sql1__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + self.rule_id.__str__())
+        self.__sql2__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_2) where r.rule_id = " + self.rule_id.__str__())
         self.__check__ = self.__repo__.run_sql("select c.* from rules r join checks c on c.check_id = r.check_id where r.rule_id = 1")
         self.check_results = []
         self.rule_result = ''
