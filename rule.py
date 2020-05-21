@@ -12,11 +12,11 @@ class DQRule:
 
         for l in self.__sql1__:
             sql = l[2]
-            result_1.append(self.__repo__.run_sql(sql))
+            result_1.append(self.__impala__.run_sql(sql))
 
         for l in self.__sql2__:
             sql = l[2]
-            result_2.append(self.__repo__.run_sql(sql))
+            result_2.append(self.__impala__.run_sql(sql))
 
         for i in range(0, len(self.__check__)):
             relation = self.__check__[i][3]
@@ -51,7 +51,7 @@ class DQRule:
 
     def __init__(self, rule_id):
         self.__repo__ = SQLite3()
-        self.__impala__ = __impala__()
+        self.__impala__ = Impala()
         self.__sql1__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.checkid = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + rule_id)
         self.__sql2__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.checkid = r.check_id join statements s on (s.statement_id = c.statement_2) where r.rule_id = " + rule_id)
         self.__check__ = self.__repo__.run_sql("select c.* from rules r join checks c on c.checkid = r.check_id where r.rule_id = 1")
