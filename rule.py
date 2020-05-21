@@ -19,11 +19,12 @@ class DQRule:
     def __init__(self):
         self.repo = SQLite3()
         self.impala = Impala()
-        statement_array = repo.run_sql("select * from statements")
+        statement_array = self.repo.run_sql("select * from statements")
+        checks_array = self.repo.run_sql("select * from checks")
+        rules_array = self.repo.run_sql("select * from rules")
+
         self.statements = pd.DataFrame(data=statement_array, columns=["statement_id", "description", "statement"])
-        checks_array = repo.run_sql("select * from checks")
         self.checks = pd.DataFrame(data=checks_array, columns=["check_id", "description", "statement_1", "relation","statement_2"])
-        rules_array = repo.run_sql("select * from rules")
         self.rules = pd.DataFrame(data=rules_array, columns=["rule_id", "description", "check_id"])
         #check_rule(1)
         #repo.close()
