@@ -55,8 +55,10 @@ class DQRule:
             max_rule_checks = self.__repo__.run_sql("select max(check_result_id) from check_result")
             for j in range(0, r_max):
                 sql = 'insert into statement_result(check_result_id, statement_id, result, exec_date) values({}, {} "{}", "{}")'.format(max_rule_checks.__str__(), self.__sql1__[j][0].__str__(), result_1[j].__str__(), exec_ts)
+                print(sql)
                 self.__repo__.run_sql(sql)
                 sql = 'insert into statement_result(check_result_id, statement_id, result, exec_date) values({}, {} "{}", "{}")'.format(max_rule_checks.__str__(), self.__sql2__[j][0].__str__(), result_2[j].__str__(), exec_ts)
+                print(sql)
                 self.__repo__.run_sql(sql)
 
         print("")
