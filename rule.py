@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 class DQRule:
-    def check(self, rule_id):
+    def check(self):
         exec_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         result_1 = []
         result_2 = []
@@ -40,7 +40,7 @@ class DQRule:
                 result_r = r
                 break
         
-        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(rule_id, result_r, exec_ts)
+        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.rule_id, result_r, exec_ts)
         self.__repo__.run_sql(sql)
         self.__repo__.close()
 
@@ -50,6 +50,7 @@ class DQRule:
         print(result_c)
 
     def __init__(self, rule_id):
+        self.rule_id = rule_id
         self.__repo__ = SQLite3()
         self.__impala__ = Impala()
         self.__sql1__ = self.__repo__.run_sql("select s.* from rules r join checks c on c.checkid = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + rule_id.__str__())
