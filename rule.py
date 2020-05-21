@@ -9,19 +9,19 @@ class DQRule:
         result_2 = []
         result_c = []
         result_r = 'True'
-        print("Results: ")
+        print("Test case execution results: ")
         for l in range(0, len(self.__sql1__)):
             sql = self.__sql1__[l][2]
             check_id = self.__sql1__[l][3]
             result = self.__impala__.run_sql(sql)
             result_1.append(result)
-            print(check_id.__str__() + ".x: " + result.__str__())
+            print("C" + check_id.__str__() + ".Q1: " + result.__str__())
 
             sql = self.__sql2__[l][2]
             check_id = self.__sql2__[l][3]
             result = self.__impala__.run_sql(sql)
             result_2.append(result)
-            print(check_id.__str__() + ".y: " + result.__str__())
+            print("C" + check_id.__str__() + ".Q2: " + result.__str__())
 
             relation = self.__check__[l][3]
             if relation == "=":
@@ -34,36 +34,12 @@ class DQRule:
                 result_c.append('') #TODO
             else:
                 result_c.append('') #TODO
-
+            print("Test result: " + result_c[l])
             sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_c[l], exec_ts)
             #print(sql)
             self.__repo__.run_sql(sql)
 
- #       for l in self.__sql2__:
- #           sql = l[2]
- #           check_id = l[3]
- #           result = self.__impala__.run_sql(sql)
- #           result_2.append(result)
- #           print(check_id.__str__() + ".2: " + result.__str__())
-
- #       for i in range(0, len(self.__check__)):
- #           relation = self.__check__[i][3]
- #           if relation == "=":
- #               result_c.append((result_1[i] == result_2 [i]).__str__())
- #           elif relation == "<=":
- #               result_c.append((result_1[i] <= result_2 [i]).__str__())
- #           elif relation == ">=":
- #               result_c.append((result_1[i] >= result_2 [i]).__str__())
- #           elif relation == "in":
- #               result_c.append('') #TODO
- #           else:
- #               result_c.append('') #TODO
-
-#            sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_c[i], exec_ts)
-            #print(sql)
-#            self.__repo__.run_sql(sql)
-            
-        # a rule is ok if all __check__s in it are ok
+        # A rule is ok, if all test cases in checks are ok
         for r in result_c:
             if r == 'False':
                 result_r = r
@@ -77,8 +53,6 @@ class DQRule:
         # final o/p
         self.check_results = result_c
         self.rule_result = result_r
-        print("Check status: ")
-        print(result_c)
         print("Rule status: " + result_r)
 
         self.__repo__.close()
