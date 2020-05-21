@@ -9,9 +9,8 @@ class DQRule:
         result_2 = []
         result_c = []
         result_r = 'True'
-        r_max = len(self.__sql1__)
         print("Test case execution results: ")
-        for l in range(0, r_max):
+        for l in range(0, len(self.__sql1__)):
             sql = self.__sql1__[l][2]
             check_id = self.__sql1__[l][3]
             result = self.__impala__.run_sql(sql)
@@ -36,16 +35,19 @@ class DQRule:
             else:
                 result_c.append('') #TODO
             print("Test result: " + result_c[l])
-
-            sql = 'insert into check_result(check_id, result, exec_date) values({} "{}", "{}")'.format(self.__check__[l][0].__str__(), result_c[l], exec_ts)
+            sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_c[l], exec_ts)
+            #print(sql)
             self.__repo__.run_sql(sql)
-            self.__repo__.connection.commit()
-            
+
         # A rule is ok, if all test cases in checks are ok
         for r in result_c:
             if r == 'False':
                 result_r = r
                 break
+        
+        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_r, exec_ts)
+        #print(sql)
+        self.__repo__.run_sql(sql)
 
         print("")
         # final o/p
