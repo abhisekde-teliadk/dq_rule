@@ -21,15 +21,15 @@ class DQRule:
         for i in range(0, len(self.__check__)):
             relation = self.__check__[i][3]
             if relation == "=":
-                result_c[i] = (result_1[i] == result_2 [i]).__str__()
+                result_c.append((result_1[i] == result_2 [i]).__str__())
             elif relation == "<=":
-                result_c[i] = (result_1[i] <= result_2 [i]).__str__()
+                result_c.append((result_1[i] <= result_2 [i]).__str__())
             elif relation == ">=":
-                result_c[i] = (result_1[i] >= result_2 [i]).__str__()
+                result_c.append((result_1[i] >= result_2 [i]).__str__())
             elif relation == "in":
-                result_c[i] = '' #TODO
+                result_c.append('') #TODO
             else:
-                result_c[i] = '' #TODO
+                result_c.append('') #TODO
 
             sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0], result_c[i], exec_ts)
             self.__repo__.run_sql(sql)
