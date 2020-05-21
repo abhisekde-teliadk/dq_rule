@@ -7,8 +7,8 @@ class DQRule:
         q1 = pd.merge(check_list, self.statements, left_on='statement_1', right_on='statement_id', how="inner")
         q2 = pd.merge(q1, self.statements, left_on='statement_2', right_on='statement_id', how="inner")
 
-        q2["statement_x"].applymap(lambda x: self.repo.run_sql(x))
-        q2["statement_y"].applymap(lambda x: self.repo.run_sql(x))
+        q2["statement_x"].map(lambda x: self.repo.run_sql(x))
+        q2["statement_y"].map(lambda x: self.repo.run_sql(x))
         
         #q2["out_x"] = self.repo.run_sql(q2["statement_x"])[0][0]
         #q2["out_y"] = self.repo.run_sql(q2["statement_y"])[0][0]
