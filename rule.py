@@ -37,7 +37,7 @@ class DQRule:
             else:
                 result_c.append('') #TODO
 
-            sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0], result_c[i], exec_ts)
+            sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_c[i], exec_ts)
             print(sql)
             self.__repo__.run_sql(sql)
             
@@ -47,7 +47,7 @@ class DQRule:
                 result_r = r
                 break
         
-        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.rule_id, result_r, exec_ts)
+        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_r, exec_ts)
         print(sql)
         self.__repo__.run_sql(sql)
         self.__repo__.close()
