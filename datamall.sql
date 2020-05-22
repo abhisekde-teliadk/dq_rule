@@ -1,6 +1,6 @@
 create table statements(statement_id integer primary key autoincrement, description text, statement text);
 
-insert into statements(description, statement) values("", "select subscriber_id from analytics.abt_subscriber_current group by subscriber_id having count(*) > 1"); 
+insert into statements(description, statement) values("", "select count(subscriber_id) from analytics.abt_subscriber_current group by subscriber_id having count(*) > 1"); 
 insert into statements(description, statement) values("", "select count(*) from analytics.abt_subscriber_current where is_active is not true"); 
 insert into statements(description, statement) values("", "select count(*) from analytics.abt_subscriber_current where active_record_flag is not true"); 
 insert into statements(description, statement) values("", "select count(*) from analytics.abt_subscriber_current where status not in ('A','S')"); 
@@ -17,7 +17,7 @@ insert into statements(description, statement) values("", "select 1");
 insert into statements(description, statement) values("", "select null");
 
 create table checks(check_id integer primary key  autoincrement, description text, statement_1 integer not null, relation text, statement_2 integer not null, foreign key(statement_1) references statements,  foreign key(statement_2) references statements);
-insert into checks(description, statement_1, relation, statement_2) values("", 1, "=", 13);
+insert into checks(description, statement_1, relation, statement_2) values("", 1, "=", 11);
 insert into checks(description, statement_1, relation, statement_2) values("", 2, "=", 11); 
 insert into checks(description, statement_1, relation, statement_2) values("", 3, "=", 11); 
 insert into checks(description, statement_1, relation, statement_2) values("", 4, "=", 11); 

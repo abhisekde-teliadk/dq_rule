@@ -74,6 +74,7 @@ class Impala:
                 rows = o.split('\n')
                 rows = (r for r in rows if r!= '')
                 return list(i.split('\t') for i in rows if i != '')
+            print(rows)
             return []
         else:
             raise Exception(e)
