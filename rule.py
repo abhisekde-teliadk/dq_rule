@@ -4,9 +4,9 @@ from datetime import datetime
 import threading
 
 class DQRule:
-    def __exec_sql__(self, sql, storage): 
+    def __exec_sql__(self, sql, storage, check_id): 
         result = self.__impala__.run_sql(sql)
-        storage.append(result)
+        storage[check_id] = result
 
     def check(self):
         threads = []
@@ -15,12 +15,14 @@ class DQRule:
 
         for l in range(l_range):
             sql = self.__sql1__[l][2]
-            t = threading.Thread(target=self.__exec_sql__, args=[sql, self.__result_1__])
+            check_id = self.__sql1__[l][3]
+            t = threading.Thread(target=self.__exec_sql__, args=[sql, self.__result_1__, check_id])
             t.start()
             threads.append(t)
 
             sql = self.__sql2__[l][2]
-            t = threading.Thread(target=self.__exec_sql__, args=[sql, self.__result_2__])
+            check_id = self.__sql1__[l][3]
+            t = threading.Thread(target=self.__exec_sql__, args=[sql, self.__result_2__, check_id])
             t.start()
             threads.append(t)
         
@@ -31,39 +33,27 @@ class DQRule:
         for l in range(l_range):
             relation = self.__check__[l][3]
             check_id = self.__check__[l][0].__str__()
-            result_1 = self.__result_1__[l].__str__()
-            result_2 = self.__result_2__[l].__str__()
+            result_1 = self.__result_1__[check_id].__str__()
+            result_2 = self.__result_2__[check_id].__str__()
 
             if relation == "=":
                 test = result_1 == result_2
-                verdict = 'Fail'
-                if test:
-                    verdict = 'Pass'
-                self.__result_c__.append(verdict)
-
             elif relation == "<=":
                 test = result_1 <= result_2
-                verdict = 'Fail'
-                if test:
-                    verdict = 'Pass'
-                self.__result_c__.append(verdict)
-
             elif relation == ">=":
                 test = result_1 >= result_2
-                verdict = 'Fail'
-                if test:
-                    verdict = 'Pass'
-                self.__result_c__.append(verdict)
-
-            elif relation == "in":
-                test = result_1 == result_2
-                verdict = 'Fail'
-                if test:
-                    verdict = 'Pass'
-                self.__result_c__.append('') #TODO
-
+            elif relation == "in": 
+                test = ''  #TODO
             else:
-                self.__result_c__.append('') #TODO
+                test = ''  #TODO
+            
+            verdict = 'Not defined'
+            if test.__str__() == 'True':
+                verdict = 'Pass'
+            else:
+                verdict = 'Fail'
+                
+            self.__result_c__[check_id] = verdict
             
             print("C" + check_id + ".Q1: " + result_1)
             print("C" + check_id + ".Q2: " + result_2)
@@ -96,7 +86,7 @@ class DQRule:
         self.__check__ = self.__repo__.run_sql("select c.*, rule_id from rules r join checks c on c.check_id = r.check_id where r.rule_id = " + self.rule_id.__str__())
         self.check_results = []
         self.rule_result = ''
-        self.__result_1__ = []
-        self.__result_2__ = []
-        self.__result_c__ = []
+        self.__result_1__ = {}
+        self.__result_2__ = {}
+        self.__result_c__ = {}
         self.__result_r__ = 'Pass'
