@@ -31,7 +31,7 @@ class DQRule:
             t.join()
 
         print("Test case execution results: ")
-        for l in range(l_range):
+        for l in self.__result_1__.keys():
             relation = self.__check__[l][3]
             check_id = self.__check__[l][0].__str__()
             result_1 = self.__result_1__[check_id].__str__()
