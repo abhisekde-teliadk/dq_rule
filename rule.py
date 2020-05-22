@@ -5,6 +5,7 @@ import threading
 
 class DQRule:
     def __exec_sql__(self, sql, storage, check_id): 
+        print(check_id, sql)
         result = self.__impala__.run_sql(sql)
         storage[check_id] = result
 
@@ -52,7 +53,7 @@ class DQRule:
                 verdict = 'Pass'
             else:
                 verdict = 'Fail'
-                
+
             self.__result_c__[check_id] = verdict
             
             print("C" + check_id + ".Q1: " + result_1)
