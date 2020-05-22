@@ -1,59 +1,89 @@
 from database import Impala, SQLite3
 import pandas as pd
 from datetime import datetime
+import threading
 
 class DQRule:
+    def __exec_sql__(self, sql, storage): 
+        result = self.__impala__.run_sql(sql)
+        storage.append(result)
+
     def check(self):
+        threads = []
+        l_range = len(self.__sql1__)
         exec_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        result_1 = []
-        result_2 = []
-        result_c = []
-        result_r = 'True'
-        print("Test case execution results: ")
-        for l in range(0, len(self.__sql1__)):
+
+        for l in range(l_range):
             sql = self.__sql1__[l][2]
-            check_id = self.__sql1__[l][3]
-            result = self.__impala__.run_sql(sql)
-            result_1.append(result)
-            print("C" + check_id.__str__() + ".Q1: " + result.__str__())
+            t = threading.Thread(target=self.__exec_sql__, args=[sql, self.__result_1__])
+            t.start()
+            threads.append(t)
 
             sql = self.__sql2__[l][2]
-            check_id = self.__sql2__[l][3]
-            result = self.__impala__.run_sql(sql)
-            result_2.append(result)
-            print("C" + check_id.__str__() + ".Q2: " + result.__str__())
+            t = threading.Thread(target=self.__exec_sql__, args=[sql, self.__result_2__])
+            t.start()
+            threads.append(t)
+        
+        for t in threads:
+            t.join()
 
+        print("Test case execution results: ")
+        for l in range(l_range):
             relation = self.__check__[l][3]
+            check_id = self.__check__[l][0].__str__()
+            result_1 = self.__result_1__[l].__str__()
+            result_2 = self.__result_2__[l].__str__()
+
             if relation == "=":
-                result_c.append((result_1[l] == result_2 [l]).__str__())
+                test = result_1 == result_2
+                verdict = 'Fail'
+                if test:
+                    verdict = 'Pass'
+                self.__result_c__.append(verdict)
+
             elif relation == "<=":
-                result_c.append((result_1[l] <= result_2 [l]).__str__())
+                test = result_1 <= result_2
+                verdict = 'Fail'
+                if test:
+                    verdict = 'Pass'
+                self.__result_c__.append(verdict)
+
             elif relation == ">=":
-                result_c.append((result_1[l] >= result_2 [l]).__str__())
+                test = result_1 >= result_2
+                verdict = 'Fail'
+                if test:
+                    verdict = 'Pass'
+                self.__result_c__.append(verdict)
+
             elif relation == "in":
-                result_c.append('') #TODO
+                test = result_1 == result_2
+                verdict = 'Fail'
+                if test:
+                    verdict = 'Pass'
+                self.__result_c__.append('') #TODO
+
             else:
-                result_c.append('') #TODO
-            print("Test result: " + result_c[l])
-            sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_c[l], exec_ts)
-            #print(sql)
+                self.__result_c__.append('') #TODO
+            
+            print("C" + check_id + ".Q1: " + result_1)
+            print("C" + check_id + ".Q2: " + result_2)
+            sql = 'insert into check_result(check_id, result, exec_date) values({}, "{}", "{}")'.format(check_id, self.__result_c__[l], exec_ts)
             self.__repo__.run_sql(sql)
 
-        # A rule is ok, if all test cases in checks are ok
-        for r in result_c:
-            if r == 'False':
-                result_r = r
+        # A rule is Pass, if all test cases in checks are Pass
+        for r in self.__result_c__:
+            if r == 'Fail':
+                self.__result_r__ = r
                 break
         
-        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.__check__[0][0].__str__(), result_r, exec_ts)
-        #print(sql)
+        sql = 'insert into rule_result(rule_id, result, exec_date) values({}, "{}", "{}")'.format(self.rule_id, self.__result_r__, exec_ts)
         self.__repo__.run_sql(sql)
 
         print("")
         # final o/p
-        self.check_results = result_c
-        self.rule_result = result_r
-        print("Rule status: " + result_r)
+        self.check_results = self.__result_c__
+        self.rule_result = self.__result_r__
+        print("Rule status: " + self.__result_r__)
 
         self.__repo__.close()
 
@@ -63,6 +93,10 @@ class DQRule:
         self.__impala__ = Impala()
         self.__sql1__ = self.__repo__.run_sql("select s.*, c.check_id from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_1) where r.rule_id = " + self.rule_id.__str__())
         self.__sql2__ = self.__repo__.run_sql("select s.*, c.check_id from rules r join checks c on c.check_id = r.check_id join statements s on (s.statement_id = c.statement_2) where r.rule_id = " + self.rule_id.__str__())
-        self.__check__ = self.__repo__.run_sql("select c.* from rules r join checks c on c.check_id = r.check_id where r.rule_id = 1")
+        self.__check__ = self.__repo__.run_sql("select c.*, rule_id from rules r join checks c on c.check_id = r.check_id where r.rule_id = " + self.rule_id.__str__())
         self.check_results = []
         self.rule_result = ''
+        self.__result_1__ = []
+        self.__result_2__ = []
+        self.__result_c__ = []
+        self.__result_r__ = 'Pass'
